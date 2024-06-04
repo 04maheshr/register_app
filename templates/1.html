@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE Department Faculty Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="College Logo" class="logo">
+    </header>
+    <main>
+        <section class="form-section">
+            <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="regNumbers">Enter Registration Numbers:</label>
+                    <textarea id="regNumbers" name="regNumbers" rows="4" cols="50" placeholder="Enter one or more registration numbers separated by commas" required></textarea>
+                </div>
+                <div class="form-group" id="form-group">
+                    <label for="pdfFiles">Upload PDF Files:</label>
+                    <input type="file" id="pdfFiles" name="pdfFiles" accept=".pdf" multiple>
+                    <button type="button" id="addFileButton" class="maheshaddbutton">Add File</button>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <script src="{{ url_for('static', filename='script/javascript.js') }}"></script>
+</body>
+</html>
